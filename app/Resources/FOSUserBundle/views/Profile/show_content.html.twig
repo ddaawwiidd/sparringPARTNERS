@@ -1,8 +1,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <div class="fos_user_user_show">
-    <h1>{{ 'profile.show.username'|trans }}: {{ user.username }}</h1>
-    <p>Fighter profile to be included here</p>
+    <h1>{{ user.username }}</h1>
+    <a href="{{ path('showProfile', {'id': user.id}) }}">Profile</a>
+    <a href = "{{  path('newProfile',{'id': user.id})}}">Create profile</a>
     <h2><a href = "{{  path('showAllFighters') }}">List of all fighters</a></h2>
 </div>
 

@@ -12,20 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Profile
 {
-    public static function GetFighterById($id){
-        if($id < 20){
-            return new Profile($id);
-        }
-        return null;
-    }
-
-    public static function GetAllFighters(){
-        $ret = [];
-        for($i=0; $i< 20; $i++){
-            $ret[] = self::GetFighterById($i);
-        }
-        return $ret;
-    }
 
     /**
      * @var integer

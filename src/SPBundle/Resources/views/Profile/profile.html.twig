@@ -1,4 +1,4 @@
-<h1>{% if fighter == null %}<a href = "{{  path('sp_profile_newprofile')}}">create profile</a> {% else %}
+<h1>{% if fighter == null %} Create your profile first {% else %}
     {{ fighter.firstName }} {{ fighter.secondName }} </h1>
 <p>Description: {{ fighter.description }}</p>
 <ul>Gender: <strong>{{ fighter.sex }}</strong></ul>
@@ -6,3 +6,4 @@
 <ul>Height in cm: <strong>{{ fighter.height }}</strong></ul>
 <ul>Belt color: <strong>{{ fighter.belt }}</strong></ul>
 <ul>Lives in: <strong>{{ fighter.location }}</strong> {% endif %}</ul>
+
