@@ -12,6 +12,21 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Profile
 {
+    public static function GetFighterById($id){
+        if($id < 20){
+            return new Profile($id);
+        }
+        return null;
+    }
+
+    public static function GetAllFighters(){
+        $ret = [];
+        for($i=0; $i< 20; $i++){
+            $ret[] = self::GetFighterById($i);
+        }
+        return $ret;
+    }
+
     /**
      * @var integer
      *
@@ -76,6 +91,13 @@ class Profile
      * @ORM\Column(name="location", type="string", length=255)
      */
     private $location;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="sparringMode", type="boolean")
+     */
+    private $sparringMode;
 
     /**
      * @ORM\OneToOne(targetEntity="User", inversedBy="profile")
@@ -299,5 +321,28 @@ class Profile
     public function getFighter()
     {
         return $this->fighter;
+    }
+
+    /**
+     * Set sparringMode
+     *
+     * @param boolean $sparringMode
+     * @return Profile
+     */
+    public function setSparringMode($sparringMode)
+    {
+        $this->sparringMode = $sparringMode;
+
+        return $this;
+    }
+
+    /**
+     * Get sparringMode
+     *
+     * @return boolean 
+     */
+    public function getSparringMode()
+    {
+        return $this->sparringMode;
     }
 }

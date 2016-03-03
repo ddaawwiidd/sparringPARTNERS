@@ -1,0 +1,7 @@
+{% block body %}
+    {% for fighter in fighters %}
+        {%  if fighter.sparringMode != null %}
+            <ul><a href = "{{  path('showAllFighters', {'id':fighter.id})}}">{{ fighter.firstName }} {{ fighter.secondName }}</a></ul>
+        {% endif %}
+    {%  endfor %}
+{% endblock %}

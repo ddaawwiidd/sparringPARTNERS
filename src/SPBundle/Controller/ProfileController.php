@@ -28,6 +28,7 @@ class ProfileController extends Controller
         $form->add('height', 'number');
         $form->add('belt', 'text');
         $form->add('location', 'text');
+        $form->add('sparringMode', 'checkbox', ['label' => 'I want to fight', 'required' => false ]);
         $form->add('add profile', 'submit', ['label' => 'create new profile']);
         $form->setAction($action);
 
@@ -82,17 +83,31 @@ class ProfileController extends Controller
 
         return $this->redirectToRoute('getProfile', ['id' =>$newId]);
     }
-/*
-    /**
-     * @Route("/getProfile/{id}, name="getProfile")
-     * @Template("SPBundle:Profile:profile.html.twig")
 
-    public function getProfileAction($id)
+    /**
+     * @Route("/showProfile/{id}", name="showProfile")
+     * @Template("SPBundle:Profile:profile.html.twig")
+     */
+    public function showProfileAction($id)
     {
         $repo = $this->getDoctrine()->getRepository('SPBundle:Profile');
-        $profile = $repo->find($id);
 
-        return ['profile' => $profile];
+        $fighter = $repo->find($id);
+
+        return ['fighter' => $fighter];
     }
-*/
+
+    /**
+     * @Route("/showAllFighters", name="showAllFighters")
+     * @Template("SPBundle:Profile:showAllFighters.html.twig")
+     */
+
+    public function showAllProfiles()
+    {
+        $repo = $this->getDoctrine()->getRepository('SPBundle:Profile');
+
+        $fighters = $repo->findAll();
+
+        return ['fighters' => $fighters];
+    }
 }
