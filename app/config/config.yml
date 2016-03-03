@@ -82,7 +82,12 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: SPBundle\Entity\User
+
 services:
     fos_user.doctrine_registry:
         alias: doctrine
 
+fos_message:
+    db_driver: orm
+    thread_class: Acme\MessageBundle\Entity\Thread
+    message_class: Acme\MessageBundle\Entity\Message
