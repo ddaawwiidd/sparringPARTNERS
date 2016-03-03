@@ -89,5 +89,5 @@ services:
 
 fos_message:
     db_driver: orm
-    thread_class: Acme\MessageBundle\Entity\Thread
-    message_class: Acme\MessageBundle\Entity\Message
+    thread_class: SPBundle\Entity\Thread
+    message_class: SPBundle\Entity\Message

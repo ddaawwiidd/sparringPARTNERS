@@ -1,7 +1,7 @@
 <?php
-// src/Acme/MessageBundle/Entity/ThreadMetadata.php
+// src/SPBundle/Entity/ThreadMetadata.php
 
-namespace Acme\MessageBundle\Entity;
+namespace SPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Entity\ThreadMetadata as BaseThreadMetadata;
@@ -20,7 +20,7 @@ class ThreadMetadata extends BaseThreadMetadata
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="Acme\MessageBundle\Entity\Thread",
+     *   targetEntity="Thread",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\ThreadInterface
@@ -28,7 +28,7 @@ class ThreadMetadata extends BaseThreadMetadata
     protected $thread;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;

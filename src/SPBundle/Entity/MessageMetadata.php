@@ -1,7 +1,7 @@
 <?php
-// src/Acme/MessageBundle/Entity/MessageMetadata.php
+// src/SPBundle/Entity/MessageMetadata.php
 
-namespace Acme\MessageBundle\Entity;
+namespace SPBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\MessageBundle\Entity\MessageMetadata as BaseMessageMetadata;
@@ -20,7 +20,7 @@ class MessageMetadata extends BaseMessageMetadata
 
     /**
      * @ORM\ManyToOne(
-     *   targetEntity="Acme\MessageBundle\Entity\Message",
+     *   targetEntity="Message",
      *   inversedBy="metadata"
      * )
      * @var \FOS\MessageBundle\Model\MessageInterface
@@ -28,7 +28,7 @@ class MessageMetadata extends BaseMessageMetadata
     protected $message;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="User")
      * @var \FOS\MessageBundle\Model\ParticipantInterface
      */
     protected $participant;
