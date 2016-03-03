@@ -1,0 +1,10 @@
+<p>{% if profile == null %}redirect to create profile {% else %}
+    {{ profile.firstName }} {{ profile.secondName }} </p>
+<p>{{ profile.description }}</p>
+<ul>{{ profile.sex }}</ul>
+<ul>{{ profile.weight }}</ul>
+<ul>{{ profile.height }}</ul>
+<ul>{{ profile.belt }}</ul>
+<ul>{{ profile.location }} {% endif %}</ul>
+
+<a href = "{{  path('coderslab_views_showarticle')}}">{{ article.title }}</a>
